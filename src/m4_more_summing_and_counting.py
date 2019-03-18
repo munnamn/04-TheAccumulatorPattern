@@ -12,7 +12,7 @@ in its "in graphics" form:
    IN GRAPHICS:   x = x + pixels
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
-         Aaron Wilkin, their colleagues, and PUT_YOUR_NAME_HERE.
+         Aaron Wilkin, their colleagues, and Nihaar Munnamgi.
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import math
@@ -124,7 +124,11 @@ def sum_from(m, n):
     #   you must NOT use the 2 or 3-parameter versions
     #   of the RANGE expression, if you happen to know them.
     # -------------------------------------------------------------------------
+    total = 0
+    for k in range (m, n+1):
+        total = total + k
 
+    return total
 
 def run_test_factorial():
     """ Tests the   factorial   function. """
@@ -179,7 +183,10 @@ def factorial(n):
     # IMPORTANT:  Your solution MUST
     #   use an explicit    for ... in range(...):     statement.
     # -------------------------------------------------------------------------
-
+    total = 1
+    for k in range(-1, n-1, -1):
+        total = total * k
+    return total
 
 def run_test_count_cosines_from():
     """ Tests the   count_cosines_from   function. """
@@ -251,7 +258,12 @@ def count_cosines_from(m, n, x):
     #   you must NOT use the 2 or 3-parameter versions
     #   of the RANGE expression, if you happen to know them.
     # -------------------------------------------------------------------------
-
+    total = 0
+    for k in range(m, n+1):
+        total = total + math.cos(k)
+        if total > x:
+            return k
+    return total
 
 def run_test_sum_unit_fractions_from():
     """ Tests the   sum_unit_fractions_from   function. """
